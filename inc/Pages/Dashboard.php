@@ -57,6 +57,11 @@ class Dashboard extends BaseController
                     $errors     = array();// $success[] = 'Added';
                     $sTitle     = str_replace( ' ', '-', $_POST['stitle']);
                     $sCon       = $_POST['code'];
+                    if ( substr(trim( $sCon), 0, 5) == '<?php' ) {
+                        
+                    } else {
+                        $sCon = '<?php ?>' . $sCon;
+                    }
                     $sShortCode = '[ucsi snippet="' . strtolower( $sTitle) . '"]';
                     $sDate      = date( get_option( 'date_format' ) . " h:i:s A");
                     $sStatus    = 1;
@@ -118,6 +123,10 @@ class Dashboard extends BaseController
                     $errors     = array();// $success[] = 'Added';
                     $sTitle     = str_replace( ' ', '-', $_POST['stitle']);
                     $sCon       = $_POST['code'];
+                    if (substr(trim($sCon), 0, 5) == '<?php') {
+                    } else {
+                        $sCon = '<?php ?>' . $sCon;
+                    }
                     $sShortCode = '[ucsi snippet="'.$sTitle.'"]';
                     $sStatus    = 1;
                     $sDate      = date( get_option( 'date_format' ) . " h:i:s A");
