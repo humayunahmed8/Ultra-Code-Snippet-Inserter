@@ -2,7 +2,6 @@
 /**
  * @package ultraCodeSnippetInserter
  */
-
 namespace Inc\Admin;
 
 defined('ABSPATH') || die();
